@@ -1,0 +1,10 @@
+{
+  "sqltools.connections": [
+    {
+      "previewLimit": 50,
+      "driver": "SQLite",
+      "name": "tandem",
+      "database": "db.sqlite3"
+    }
+  ]
+}
