@@ -1,2 +1,3 @@
-DELETE FROM backend_highscore
-WHERE id = 3
+SELECT *
+FROM backend_answer
+WHERE question_id = 20

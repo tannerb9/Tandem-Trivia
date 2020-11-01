@@ -21,9 +21,9 @@ from backend.views import *
 
 
 router = routers.DefaultRouter(trailing_slash=False)
-router.register(r'questions', QuestionViewSet)
-router.register(r'answers', AnswerViewSet)
-router.register(r'highscores', HighscoreViewSet)
+router.register(r'questions', QuestionViewSet, 'questions')
+router.register(r'answers', AnswerViewSet, 'answers')
+router.register(r'highscores', HighscoreViewSet, 'highscores')
 
 urlpatterns = [
     path('', include(router.urls)),
