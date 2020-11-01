@@ -6,11 +6,6 @@ from rest_framework.response import Response
 from .serializers import *
 from .models import * 
 
-# Create your views here.
-# class QuestionViewSet(viewsets.ModelViewSet):
-#     queryset = Question.objects.all()
-#     serializer_class = QuestionSerializer
-
 class QuestionViewSet(ViewSet):
 
     def list(self, request):

@@ -1,4 +1,4 @@
-"""tandem URL Configuration
+"""Tandem URL Configuration
 
 The `urlpatterns` list routes URLs to views. For more information please see:
     https://docs.djangoproject.com/en/3.1/topics/http/urls/
@@ -23,7 +23,7 @@ from backend.views import *
 router = routers.DefaultRouter(trailing_slash=False)
 router.register(r'questions', QuestionViewSet, 'questions')
 router.register(r'answers', AnswerViewSet, 'answers')
-router.register(r'highscores', HighscoreViewSet, 'highscores')
+router.register(r'highscores', HighscoreViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),
