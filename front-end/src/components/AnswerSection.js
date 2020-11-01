@@ -4,11 +4,15 @@ import { FormGroup, Label, Input } from "reactstrap";
 const AnswerSection = (props) => {
   return (
     <>
-      {props.answers.map((answer) => (
-        <FormGroup tag="fieldset">
+      {props.answers.map((answer, index) => (
+        <FormGroup key={index} tag="fieldset">
           <FormGroup check>
             <Label check>
-              <Input type="radio" name="radio" />
+              <Input
+                type="radio"
+                name="radio"
+                value={answer.answer_text}
+              />
               {answer.answer_text}
             </Label>
           </FormGroup>
