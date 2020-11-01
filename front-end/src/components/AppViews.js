@@ -1,9 +1,20 @@
 import { Route, withRouter } from "react-router-dom";
-import React from "react";
-import NavBar from "./NavBar";
+import React, { useState } from "react";
+import DataManager from "../modules/DataManager";
+import QuestionCard from "./QuestionCard";
+// import NavBar from "./NavBar";
 
 const AppViews = () => {
-  return;
+  const [questions, setQuestions] = useState();
+
+  return (
+    <Route
+      path="/"
+      render={() => {
+        return <QuestionCard />;
+      }}
+    />
+  );
 };
 
-export default AppViews;
+export default withRouter(AppViews);
