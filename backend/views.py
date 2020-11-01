@@ -1,3 +1,4 @@
+import random
 from django.shortcuts import render
 from rest_framework import viewsets
 from rest_framework.viewsets import ViewSet
@@ -6,9 +7,20 @@ from .serializers import *
 from .models import * 
 
 # Create your views here.
-class QuestionViewSet(viewsets.ModelViewSet):
-    queryset = Question.objects.all()
-    serializer_class = QuestionSerializer
+# class QuestionViewSet(viewsets.ModelViewSet):
+#     queryset = Question.objects.all()
+#     serializer_class = QuestionSerializer
+
+class QuestionViewSet(ViewSet):
+
+    def list(self, request):
+        questions = list(Question.objects.all())
+        random.shuffle(questions)
+        ten_random_questions = questions[0:10]
+
+        serializer = QuestionSerializer(ten_random_questions, many=True, context={'request': request})
+        return Response(serializer.data)
+        
 
 class AnswerViewSet(ViewSet):
 
