@@ -4,6 +4,11 @@ export default {
       data.json()
     );
   },
+  getQuestionAnswers(questionId) {
+    return fetch(
+      `http://localhost:8000/answers?question=${questionId}`
+    ).then((data) => data.json());
+  },
   postHighscore(obj) {
     return fetch(`http://localhost:8000/highscores/${obj}`, {
       method: "POST",
