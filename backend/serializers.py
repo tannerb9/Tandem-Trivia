@@ -14,4 +14,4 @@ class AnswerSerializer(serializers.HyperlinkedModelSerializer):
 class HighscoreSerializer(serializers.HyperlinkedModelSerializer):
     class Meta:
         model = Highscore
-        fields = ['id', 'initials', 'score']
+        fields = ['id', 'user_initials', 'score']

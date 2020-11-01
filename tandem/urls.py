@@ -16,8 +16,14 @@ Including another URLconf
 from django.contrib import admin
 from django.urls import path, include
 from rest_framework import routers
+from backend.models import *
+from backend.views import *
+
 
 router = routers.DefaultRouter(trailing_slash=False)
+router.register(r'questions', QuestionViewSet)
+router.register(r'answers', AnswerViewSet)
+router.register(r'highscores', HighscoreViewSet)
 
 urlpatterns = [
     path('', include(router.urls)),

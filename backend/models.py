@@ -12,3 +12,6 @@ class Answer(models.Model):
 class Highscore(models.Model):
     user_initials = models.CharField(max_length=3)
     score = models.IntegerField()
+
+    class Meta:
+        ordering = ["-score"]
