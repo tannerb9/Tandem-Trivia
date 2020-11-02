@@ -16,7 +16,7 @@ const AppViews = () => {
     );
   };
 
-  useEffect(getTenQuestions, []);
+  useEffect(getTenQuestions, [questions]);
 
   return (
     <Route
@@ -25,7 +25,12 @@ const AppViews = () => {
         return (
           <>
             {isMounted ? (
-              <TriviaFormLayout questions={questions} {...props} />
+              <TriviaFormLayout
+                getTenQuestions={getTenQuestions}
+                questions={questions}
+                setQuestions={setQuestions}
+                {...props}
+              />
             ) : null}
           </>
         );

@@ -6,7 +6,6 @@ const AnswerSection = (props) => {
   const [modalText, setModalText] = useState("");
 
   const isDisabled = props.isDisabled;
-  console.log("disabled?", isDisabled);
 
   const toggle = () => {
     setModal(!modal);

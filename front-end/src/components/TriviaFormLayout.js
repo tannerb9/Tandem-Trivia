@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { Redirect } from "react-router-dom";
 import DataManager from "../modules/DataManager";
 import AnswerSection from "./AnswerSection";
 import {
@@ -8,6 +9,7 @@ import {
   Label,
   Modal,
   ModalBody,
+  ModalFooter,
 } from "reactstrap";
 
 const TriviaFormLayout = (props) => {
@@ -25,6 +27,8 @@ const TriviaFormLayout = (props) => {
     setModal(!modal);
   };
 
+  console.log("score", score);
+
   const getQuestionAnswers = () => {
     DataManager.getQuestionAnswers(question.id).then(
       (returnedAnswers) => {
@@ -35,6 +39,11 @@ const TriviaFormLayout = (props) => {
   };
 
   useEffect(getQuestionAnswers, [question]);
+
+  const startNewRound = () => {
+    props.getTenQuestions();
+    toggle();
+  };
 
   const handleSubmit = (event) => {
     event.preventDefault();
@@ -53,6 +62,9 @@ const TriviaFormLayout = (props) => {
       <Form className="justify-content-center">
         <Modal isOpen={modal} toggle={toggle}>
           <ModalBody>{modalText}</ModalBody>
+          <ModalFooter>
+            <Button onClick={startNewRound}>Play Again?</Button>
+          </ModalFooter>
         </Modal>
         <FormGroup className="center">
           <Label for="question">{question.question_text}</Label>
