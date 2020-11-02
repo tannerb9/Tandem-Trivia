@@ -23,7 +23,7 @@
 
 #### ERD
 
-<img src="backend/static/ERD.png" width="80%" height="auto">
+<img src="backend/static/ERD.png" width="50%" height="auto">
 
 #### Contributors
 
