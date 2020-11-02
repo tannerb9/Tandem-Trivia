@@ -8,7 +8,7 @@
 2. Start environment <code>source env/bin/activate</code>
 3. Execute <code>pip install -r requirements.txt</code>
 4. Seed database: `python manage.py loaddata Data.json`
-5. Start back-end server <code>python manage.py runserver</code> // Note,
+5. Start back-end server <code>python manage.py runserver</code>
 6. In new terminal tab, cd into /frontend and execute <code>npm install</code>
 7. Start front-end server <code>npm start</code>
 8. Play Tandem Trivia!
