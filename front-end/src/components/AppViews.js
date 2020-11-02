@@ -16,7 +16,7 @@ const AppViews = () => {
     );
   };
 
-  useEffect(getTenQuestions, [questions]);
+  useEffect(getTenQuestions, []);
 
   return (
     <Route

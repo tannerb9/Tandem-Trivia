@@ -25,7 +25,8 @@ class AnswerViewSet(ViewSet):
         question = self.request.query_params.get('question', None)
 
         if question is not None:
-            answers = Answer.objects.filter(question_id=question)
+            answers = list(Answer.objects.filter(question_id=question))
+            random.shuffle(answers)
 
         serializer = AnswerSerializer(answers, many=True, context={'request': request})
         return Response(serializer.data)

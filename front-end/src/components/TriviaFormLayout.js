@@ -1,5 +1,4 @@
 import React, { useEffect, useState } from "react";
-import { Redirect } from "react-router-dom";
 import DataManager from "../modules/DataManager";
 import AnswerSection from "./AnswerSection";
 import {
@@ -27,13 +26,10 @@ const TriviaFormLayout = (props) => {
     setModal(!modal);
   };
 
-  console.log("score", score);
-
   const getQuestionAnswers = () => {
     DataManager.getQuestionAnswers(question.id).then(
       (returnedAnswers) => {
         setAnswers(returnedAnswers);
-        console.log("question id", question.id);
       }
     );
   };
