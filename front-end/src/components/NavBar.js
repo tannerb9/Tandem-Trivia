@@ -1,10 +1,13 @@
 import React from "react";
-import { Nav, NavItem, NavLink } from "reactstrap";
+import { Nav, NavbarBrand, NavItem, NavLink } from "reactstrap";
 
 const NavBar = () => {
   return (
-    <Nav className="main-nav" tabs>
-      <NavItem>
+    <Nav className="main-nav justify-content-center" tabs>
+      <NavbarBrand className="font-weight-bold">
+        Tandem Trivia
+      </NavbarBrand>
+      {/* <NavItem>
         <NavLink href="/">
           <div>
             <img
@@ -13,16 +16,16 @@ const NavBar = () => {
             />
           </div>
         </NavLink>
-      </NavItem>
-      <NavItem>
+      </NavItem> */}
+      {/* <NavItem>
         <NavLink href="/classic">Classic</NavLink>
-      </NavItem>
-      <NavItem>
+      </NavItem> */}
+      {/* <NavItem>
         <NavLink href="/testyourmight">Test Your Might</NavLink>
       </NavItem>
       <NavItem>
         <NavLink href="/highscores">Highscores</NavLink>
-      </NavItem>
+      </NavItem> */}
     </Nav>
   );
 };
