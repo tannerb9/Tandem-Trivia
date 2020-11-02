@@ -24,6 +24,7 @@ const AnswerSection = (props) => {
   };
 
   const handleWrongAnswer = () => {
+    props.setIndex(props.index + 1);
     setModalText(
       `The correct answer was: ${correctAnswer.answer_text}`
     );
@@ -43,7 +44,7 @@ const AnswerSection = (props) => {
               <Button
                 className="m-1"
                 key={index}
-                disabled={props.isDisabled}
+                disabled={isDisabled}
                 color="secondary"
                 onClick={() => {
                   correctAnswer.answer_text === answer.answer_text

@@ -25,7 +25,12 @@ const AppViews = () => {
         return (
           <>
             {isMounted ? (
-              <TriviaFormLayout questions={questions} {...props} />
+              <TriviaFormLayout
+                getTenQuestions={getTenQuestions}
+                questions={questions}
+                setQuestions={setQuestions}
+                {...props}
+              />
             ) : null}
           </>
         );
