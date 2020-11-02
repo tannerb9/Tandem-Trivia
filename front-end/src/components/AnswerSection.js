@@ -25,6 +25,7 @@ const AnswerSection = (props) => {
   };
 
   const handleWrongAnswer = () => {
+    props.setIndex(props.index + 1);
     setModalText(
       `The correct answer was: ${correctAnswer.answer_text}`
     );
