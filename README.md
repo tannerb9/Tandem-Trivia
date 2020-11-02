@@ -21,6 +21,10 @@
 - ReactJS
 - ReactStrap
 
+#### ERD
+
+<img src="backend/static/ERD.png" width="80%" height="auto">
+
 #### Contributors
 
 Tanner Brainard
