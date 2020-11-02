@@ -6,6 +6,7 @@ const AnswerSection = (props) => {
   const [modalText, setModalText] = useState("");
 
   const isDisabled = props.isDisabled;
+  console.log("disabled?", isDisabled);
 
   const toggle = () => {
     setModal(!modal);
@@ -43,7 +44,7 @@ const AnswerSection = (props) => {
               <Button
                 className="m-1"
                 key={index}
-                disabled={props.isDisabled}
+                disabled={isDisabled}
                 color="secondary"
                 onClick={() => {
                   correctAnswer.answer_text === answer.answer_text

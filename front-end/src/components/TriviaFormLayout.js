@@ -31,6 +31,7 @@ const TriviaFormLayout = (props) => {
       <Redirect to="/finalscore" />;
     } else {
       setQuestion(questions[index + 1]);
+      setIsDisabled(!isDisabled);
     }
   };
 
